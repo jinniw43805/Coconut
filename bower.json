@@ -1,0 +1,32 @@
+{
+  "name": "coconut",
+  "description": "",
+  "main": "",
+  "authors": [
+    "tonyk <jinniw43805@gmail.com>"
+  ],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4"
+
+  },
+  "overrides": {
+    "bootstrap" : {
+      "main" : [
+	"dist/css/bootstrap.css",
+	"dist/js/bootstrap.js"
+      ]
+    }
+  }
+
+}
