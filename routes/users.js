@@ -3,8 +3,8 @@ var jwt = require('jsonwebtoken');
 var router = express.Router();
 var User = require('../app/models/user');
 
-router.post('/signup', function( req, res, next) {
-	res.sendFile('../views/mainBoard.html');
+router.get('/signup', function( req, res, next) {
+	res.render('../views/signup.html');
 });
 
 router.post('/authenticate', function( req, res, next) {
