@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('public/index.html');
+  res.render('views/index.html');
 });
 
 router.get('/auth/facebook', passport.authenticate('facebook'),function(err){});
