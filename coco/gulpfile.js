@@ -6,15 +6,15 @@ var mainBowerFiles = require('main-bower-files');
 var runSequence = require('run-sequence');
 var minifyCss 	= require('gulp-minify-css');
 
-var js_dest_path = 'public/javascript/js';
-var css_dest_path = 'public/stylesheet/css';
+var js_dest_path = 'assets/lib/js';
+var css_dest_path = 'assets/lib/css';
 
 var jsFilter = gulpFilter('*.js',{restore : true});
 var cssFilter = gulpFilter('*.css', {restore : true});
 
 gulp.task('clean', function() { 
-	rimraf("public/javascript/js/", function(){});
-	rimraf("public/stylesheet/css/", function(){});
+	rimraf(js_dest_path, function(){});
+	rimraf(css_dest_path, function(){});
 	return rimraf("bower_components", function(){});
 
 });
