@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
   res.render('views/index.html');
 });
 
+
+// =====================================
+// FACEBOOK ROUTES =====================
+// =====================================
+// route for facebook authentication and login
 router.get('/auth/facebook', passport.authenticate('facebook'),function(err){});
 
 router.get('/auth/facebook/callback', passport.authenticate('facebook', {
@@ -15,8 +20,11 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 }));
 
 router.get('/success',function(req, res, next){
-	console.log("req"+req);
-  res.send('You are Successfully logged in!!'+req.session);
+  // res.render('views/index.html',{
+  // 	user : req.user
+  // });
+	res.send("Successful");
+
 });
 
 router.get('/error', function(req, res, next) {
