@@ -1,10 +1,10 @@
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
-
+var util = require('util');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('views/index.html');
+  res.render('index.html');
 });
 
 
@@ -20,15 +20,20 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 }));
 
 router.get('/success',function(req, res, next){
-  // res.render('views/index.html',{
-  // 	user : req.user
-  // });
-	res.send("Successful");
+	  res.render('helloejs', {
+	  	user : req.user,
+	  	tagline : "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else."
+
+	  });
 
 });
 
 router.get('/error', function(req, res, next) {
 	  res.send("Error logging in.");
+});
+
+router.get('views/helloejs',function(req,res,next) {
+	res.render('views/helloejs');
 });
 
 module.exports = router;
