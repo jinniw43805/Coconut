@@ -19,7 +19,7 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 	  failureRedirect: '/error'
 }));
 
-router.get('/success',function(req, res, next){
+router.get('/success',isLoggedIn ,function(req, res, next){
 	  res.render('helloejs', {
 	  	user : req.user,
 	  	tagline : "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else."
@@ -37,3 +37,13 @@ router.get('views/helloejs',function(req,res,next) {
 });
 
 module.exports = router;
+
+function isLoggedIn(req, res, next) {
+
+	// if user is authenticated in the session, carry on
+	if (req.isAuthenticated())
+		return next();
+
+	// if they aren't redirect them to the home page
+	res.redirect('/');
+}
