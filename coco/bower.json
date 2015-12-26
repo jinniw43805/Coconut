@@ -17,16 +17,15 @@
   ],
   "dependencies": {
     "jquery": "~2.1.4",
-    "bootstrap": "~3.3.4"
-
+    "bootstrap": "~3.3.4",
+    "font-awesome": "fontawesome#~4.5.0"
   },
   "overrides": {
-    "bootstrap" : {
-      "main" : [
-	"dist/css/bootstrap.css",
-	"dist/js/bootstrap.js"
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
       ]
     }
   }
-
 }
