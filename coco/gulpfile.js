@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var debug = require('gulp-debug');
 var gulpFilter = require('gulp-filter');
 var install 	= require('gulp-install');
 var rimraf 	= require('rimraf');
@@ -48,7 +49,12 @@ gulp.task('exportBowerFiles',function(callback){
         .pipe(fontFilter.restore)
 });
 
+gulp.task('debug',function(callback){
+    return gulp.src(mainBowerFiles())
+    .pipe(debug())
+    .pipe(gulp.dest('./build'));
 
+});
 gulp.task('build',function(callback){
     runSequence('clean','install','exportBowerFiles',callback);
 });
