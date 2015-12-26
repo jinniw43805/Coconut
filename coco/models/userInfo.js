@@ -13,5 +13,11 @@ if (mongoose.connection.readyState === 0) {
 module.exports = mongoose.model('User', new Schema({
     oauthID: Number,
     name: String,
+    emails: String,
+    photo: String,
+    gender: String,
+    provider: String,
+
     created: String
+
 }));

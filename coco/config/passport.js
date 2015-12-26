@@ -12,8 +12,8 @@ module.exports = function(passport) {
 
         clientID: FacebookConf.facebookAuth.clientID,
         clientSecret: FacebookConf.facebookAuth.clientSecret,
-        callbackURL: FacebookConf.facebookAuth.callbackURL
-
+        callbackURL: FacebookConf.facebookAuth.callbackURL,
+        profileFields: ['id','name','picture.type(large)', 'emails', 'displayName', 'about', 'gender']
     },
     function(accessToken, refreshToken, profile, done) {
         process.nextTick(function() {
@@ -38,6 +38,10 @@ module.exports = function(passport) {
                 var StoreUser = new User({
                     oauthID: profile.id,
                     name: profile.displayName,
+                    emails: profile.emails[0].value,
+                    photo: profile.photos[0].value,
+                    gender: profile.gender,
+                    provider: profile.provider,
                     created: Date.now()
                 });
                 StoreUser.save(function(err) {
