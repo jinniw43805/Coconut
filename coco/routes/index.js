@@ -21,7 +21,7 @@ router.get('/auth/facebook/callback', passport.authenticate('facebook', {
 
 router.get('/success',isLoggedIn ,function(req, res, next){
 	res.cookie('fbuid',req.user.created, { maxAge: 900000, httpOnly: true });
-	  res.render('helloejs', {
+	  res.render('dashboard', {
 	  	user : req.user,
 	  	tagline : "Any code of your own that you haven't looked at for six or more months might as well have been written by someone else."
 

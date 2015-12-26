@@ -6,23 +6,29 @@
     <% include head %>
 </head>
 <body class="container">
+    
+    <div id="wrapper">
 
-    <header>
-        <% include header %>
-    </header>
+        <% include navigation %>
 
-    <main>
+        <% include page-wrapper %>
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+<!--     <main>
         <div class="jumbotron">
         <p><%= tagline %></p>
         <strong><%= user  %></strong><br>
         <p>Welcome to templating using EJS</p>
         </div>
     </main>
-
+ -->
     <footer>
         <% include footer %>
     </footer>
     
 </body>
- 
+
 </html>
