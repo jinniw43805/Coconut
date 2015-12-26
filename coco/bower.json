@@ -24,6 +24,7 @@
     "bootstrap": {
       "main": [
         "dist/css/bootstrap.css",
+        "dist/css/bootstrap.css.map",
         "dist/js/bootstrap.js"
       ]
     },
@@ -32,6 +33,7 @@
           "css/font-awesome.css",
           "fonts/fontawesome-webfont.eot",
           "fonts/fontawesome-webfont.woff",
+          "fonts/fontawesome-webfont.woff2",
           "fonts/fontawesome-webfont.ttf",
           "fonts/fontawesome-webfont.svg"
       ]

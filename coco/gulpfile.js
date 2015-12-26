@@ -9,9 +9,9 @@ var minifyCss 	= require('gulp-minify-css');
 
 var js_dest_path = 'assets/lib/js';
 var css_dest_path = 'assets/lib/css';
-var font_dest_path = 'assets/lib/font';
+var font_dest_path = 'assets/lib/fonts';
 var jsFilter = gulpFilter('*.js',{restore : true});
-var cssFilter = gulpFilter('*.css', {restore : true});
+var cssFilter = gulpFilter(['*.css','*.css.map'], {restore : true});
 var fontFilter = gulpFilter(['*.eot', '*.svg', '*.ttf', '*.woff*'], {restore : true});
 
 gulp.task('clean', function() { 
